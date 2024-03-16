@@ -1,5 +1,5 @@
 <template>
-    <h3>
+    <h3 class="text">
         History
     </h3>
     <ul id="list" class="list">
