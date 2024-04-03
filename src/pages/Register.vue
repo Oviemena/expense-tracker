@@ -1,8 +1,9 @@
 <template>
-    <AuthUser mode="!login"/>
+    <Auth mode="!login" />
 </template>
 
 <script setup>
-import AuthUser from '@/components/AuthUser.vue';
+import { defineAsyncComponent } from 'vue'
+const Auth = defineAsyncComponent(() => import('@/components/AuthUser.vue'));
 
 </script>

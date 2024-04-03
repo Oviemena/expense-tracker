@@ -1,5 +1,5 @@
 <template>
-    <button @click="signOut">Logout</button>
+    <button @click="signOut" :disabled="!loading">Logout</button>
 </template>
 
 <script setup>
