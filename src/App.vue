@@ -1,7 +1,7 @@
 <template>
-    <Home  v-if="session" :session="session"/>
-    <Login v-else/>
-    <router-view/>
+  <Home  v-if="session" :session="session"/>
+  <Login v-else/>
+  <router-view/>
 </template>
 
 <script setup>
@@ -23,13 +23,13 @@ import Login from './pages/Login.vue';
 const session = ref()
 
 onMounted(() => {
-  supabase.auth.getSession().then(({ data }) => {
-    session.value = data.session
-  })
+supabase.auth.getSession().then(({ data }) => {
+  session.value = data.session
+})
 
-  supabase.auth.onAuthStateChange((_, _session) => {
-    session.value = _session
-  })
+supabase.auth.onAuthStateChange((_, _session) => {
+  session.value = _session
+})
 })
 
 
